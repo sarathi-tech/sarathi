@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sarathi's Portfolio</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        header {
+            background: #333;
+            color: white;
+            padding: 15px 0;
+        }
+        nav {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: white;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        #hero h2 span {
+            color: yellow;
+        }
+        #hero button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            border: none;
+            background: white;
+            color: #333;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Sections */
+        section {
+            padding: 50px 10%;
+        }
+        section h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .project-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Form */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        form input, form textarea, form button {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        form button {
+            background: #333;
+            color: white;
+            border: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <h1>Sarathi M Portfolio</h1>
+    <h1>computer science Department</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-text">
+            <h2>Hi, I'm <span>sarathi</span></h2>
+            <p>Aspiring Web Developer | Student</p>
+            <button onclick="scrollToSection('projects')">View My Work</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I’m sarathi, a computer science student passionate about web development, design, and problem-solving. I enjoy building creative projects and learning new technologies.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Portfolio Website</h3>
+                <p>A personal portfolio to showcase my skills and projects.</p>
+            </div>
+            <div class="project-card">
+                <h3>Weather App</h3>
+                <p>An app that shows real-time weather data using an API.</p>
+            </div>
+            <div class="project-card">
+                <h3>To-Do List</h3>
+                <p>A simple to-do app to manage daily tasks.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="formMessage" style="color:green; margin-top:10px;"></p>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 sarathi | All Rights Reserved</p>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+        }
+
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            document.getElementById("formMessage").textContent = "Thanks! Your message has been sent.";
+            this.reset();
+        });
+    </script>
+
+</body>
+</html>
